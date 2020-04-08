@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Charge Stations App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:400,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./modules/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet"
+        href="./modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="left">
+    <img src="img/logo.svg" alt="Charge Stations App">
+  </div>
+  <div class="right">
+    <a href="#" id="login-btn"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+    <a href="#" class="hide" id="add-btn"><i class="fas fa-plus-circle fa-2x"></i></a>
+  </div>
+</header>
+
+<section id="map" class="top-big"></section>
+
+<section id="info-section" class="low-small">
+  <header>
+    <h2 id="title">Title</h2>
+    <a href="#" id="btn" class="button"><i class="fas fa-directions fa-2x"></i></a>
+  </header>
+  <article>
+    <h3 id="address"></h3>
+    <section id="info">
+      <header><h3>Connections: </h3></header>
+    </section>
+  </article>
+</section>
+
+<section id="insert-section" class="low-small">
+  <header>
+    <h2>Add Charging Station</h2>
+  </header>
+  <form id="conn-form">
+    <div class="item">
+      <input type="text" name="location" placeholder="Tap map for location">
+    </div>
+    <div class="item">
+      <input type="text" name="title" placeholder="Title">
+    </div>
+    <div class="item">
+      <input type="text" name="address" placeholder="Address">
+    </div>
+    <div class="item">
+      <input type="text" name="postcode" placeholder="Postcode">
+    </div>
+    <div class="item">
+      <input type="text" name="town" placeholder="Town">
+    </div>
+    <div class="item">
+      <input type="text" name="state" placeholder="State or province">
+    </div>
+    <div class="connections">
+      <h3>Add all connection types of the station</h3>
+      <div id="all-connections"></div>
+      <div class="item">
+        <label>Connection type
+          <select id="connection-type">
+            <option> -</option>
+          </select>
+        </label>
+      </div>
+      <div class="item">
+        <label>Level
+          <select id="level">
+            <option> -</option>
+          </select>
+        </label>
+      </div>
+      <div class="item">
+        <label>Current type
+          <select id="current-type">
+            <option> -</option>
+          </select>
+        </label>
+      </div>
+      <div class="item">
+        <input type="text" name="quantity" placeholder="Quantity">
+      </div>
+      <div class="item">
+        <button class="button" type="button" id="add-connection">
+          <i class="fas fa-plus-circle fa-2x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="item">
+        <button class="button" type="submit"><i class="fas fa-save fa-2x"></i></button>
+      </div>
+      <div class="item">
+        <button class="button" id="reset-button" type="reset">
+          <i class="fas fa-window-close fa-2x"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section id="modify-section" class="low-small">
+  <header>
+    <h2>Modify Charging Station</h2>
+  </header>
+  <form id="modify-form">
+    <div class="item">
+      <input type="text" name="title" placeholder="Title">
+    </div>
+    <div class="item">
+      <input type="text" name="address" placeholder="Address">
+    </div>
+    <div class="item">
+      <input type="text" name="postcode" placeholder="Postcode">
+    </div>
+    <div class="item">
+      <input type="text" name="town" placeholder="Town">
+    </div>
+    <div class="item">
+      <input type="text" name="state" placeholder="State or province">
+    </div>
+    <div class="connections">
+      <h3>Connections</h3>
+      <div id="modify-all-connections"></div>
+      <div class="hide" id="edit-connections">
+        <h4>Edit connection</h4>
+        <div class="item">
+          <label>Connection type
+            <select id="modify-connection-type">
+            </select>
+          </label>
+        </div>
+        <div class="item">
+          <label>Level
+            <select id="modify-level">
+            </select>
+          </label>
+        </div>
+        <div class="item">
+          <label>Current type
+            <select id="modify-current-type">
+            </select>
+          </label>
+        </div>
+        <div class="item">
+          <input type="text" name="quantity" placeholder="Quantity">
+        </div>
+        <div class="item">
+          <button class="button" type="button" id="modify-connection-btn" data-id="">
+            <i class="fas fa-save fa-2x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" name="id">
+    <div class="buttons">
+      <div class="item">
+        <button class="button" type="submit"><i class="fas fa-file-upload fa-2x"></i></button>
+      </div>
+      <div class="item">
+        <button class="button" id="cancel-button" type="reset">
+          <i class="fas fa-window-close fa-2x"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section id="login-section" class="low-small">
+  <header>
+    <h2>Login</h2>
+  </header>
+  <form id="login-form">
+    <div class="item">
+      <input type="text" name="username" placeholder="email">
+    </div>
+    <div class="item">
+      <input type="password" name="password" placeholder="password">
+    </div>
+    <div class="buttons">
+      <div class="item">
+        <button class="button" type="submit"><i class="fas fa-sign-in-alt fa-2x"></i></button>
+      </div>
+      <div class="item">
+        <button class="button" type="button" id="close-login">
+          <i class="fas fa-window-close fa-2x"></i></button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<script src="./modules/leaflet/dist/leaflet.js"></script>
+<script src="./modules/esri-leaflet/dist/esri-leaflet.js"></script>
+<script src="./modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.js"></script>
+<script src="./js/example.js"></script>
+</body>
+</html>

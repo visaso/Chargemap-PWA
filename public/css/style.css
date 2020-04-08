@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto Slab', serif;
+}
+
+header {
+  background-color: #003459;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  line-height: 3rem;
+}
+
+.left {
+  width: 420px;
+  height: 64px;
+}
+
+.right {
+  padding: 0 1rem;
+  height: 64px;
+}
+
+
+header h1 {
+  margin: 0;
+  line-height: 4rem;
+  padding: 0 1rem;
+}
+
+header a {
+  display: block;
+  line-height: 64px;
+}
+
+i {
+  color: #fff;
+  vertical-align: middle;
+}
+
+#map i {
+  color: #007ea7;
+}
+
+#info-section > header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+section > header h2 {
+  padding: 0 1rem;
+}
+
+.button {
+  background-color: #007ea7;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  line-height: 3rem;
+}
+
+#map {
+  transition: height 1s;
+}
+
+#info-section {
+  width: 100vw;
+  color: #00171f;
+  box-sizing: border-box;
+  overflow: auto;
+  transition: height 1s;
+}
+
+.connection {
+  border: 1px solid #00a8e8;
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+}
+
+.icon {
+  font-size: 2em;
+  position: relative;
+  top: 0.27rem;
+  color: #007ea7;
+}
+
+.item {
+  margin: 1rem 0;
+}
+
+.item input {
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+}
+
+.item select {
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons .item {
+  width: 50%;
+}
+
+.item button {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.connections {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: #007ea7 solid 1px;
+  box-sizing: border-box;
+}
+
+#insert-section {
+  box-sizing: border-box;
+  overflow: scroll;
+  transition: height 1s;
+}
+
+.connections article {
+  font-size: 0.7rem;
+  border: #007ea7 1px solid;
+  position: relative;
+  padding: 0.5rem;
+}
+
+form {
+  margin: 0 1rem;
+}
+
+.connections p {
+  line-height: 0.5rem;
+}
+
+.connections a {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.connections article i {
+  color: #007ea7;
+}
+
+.top-big {
+  height: calc(100vh - 4rem);
+}
+
+.top-small {
+  height: calc(30vh - 4rem);
+}
+
+.low-small {
+  height: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.low-big {
+  height: 70vh;
+}
+
+.hide {
+  display: none;
+}
+
+#modify-section {
+  box-sizing: border-box;
+  overflow: scroll;
+  transition: height 1s;
+}
+
+#login-section {
+  box-sizing: border-box;
+  overflow: scroll;
+  transition: height 1s;
+}
