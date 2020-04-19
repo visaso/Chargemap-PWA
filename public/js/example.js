@@ -1,7 +1,8 @@
 (async () => {
   'use strict';
+  
 
-  const apiURL = './graphql';
+  const apiURL = 'http://localhost:3000/graphql';
 
   // html elements
   const mapSection = document.getElementById('map');

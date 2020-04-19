@@ -5,6 +5,10 @@
 .AppleDouble
 .LSOverride
 
+/modules
+/node_modules
+/public/modules
+
 *.cert
 *.key
 

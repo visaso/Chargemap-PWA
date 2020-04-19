@@ -1,0 +1,21 @@
+{
+    "name": "Hello Chargemap PWA",
+    "short_name": "Chargemap",
+    "icons": [
+      {
+        "src": "./public/img/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "./public/img/splash.png",
+        "sizes": "1125x2436",
+        "type": "image/png"
+      }
+    ],
+    "lang": "en-US",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+  }
